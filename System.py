@@ -11,7 +11,7 @@ word_pool = {
     5: {
         "FRUIT": ["APPLE", "MANGO", "BERRY", "CACAO", "PEARS", "GUAVA", "LEMON", "MELON", "PEACH", "PRUNE", "GRAPE", "OLIVE", "CHICO", "ROWAN", "CAROB", "ACORN", "WHEAT", "BEANS", "BACCA", "HAZEL" ],
         "ANIMAL": ["TIGER", "ZEBRA", "SHARK", "WHALE", "SLOTH", "OTTER", "BISON", "MOUSE", "LEMUR", "OTTER", "PANDA", "MOOSE", "LLAMA", "EAGLE", "SKUNK", "RHINO", "GOOSE", "KOALA", "HORSE", "CAMEL"],
-        "SPACE": ["EARTH", "ORBIT", "PLUTO", "COMET", "TITAN", "CERES", "VENUS"],
+        "SPACE": ["EARTH", "ORBIT", "PLUTO", "COMET", "TITAN", "CERES", "VENUS", "ROVER", "SOLAR", "MIZAR", "LUNAR", "PROBE", "RIGEL", "VESTA", "ORION", "FLARE", "DWARF", "DRACO", "VIRGO", "CETUS"],
         "PLACE":["BEACH", "RIVER", "OCEAN", "ARENA", "FIELD", "STORE", "SWAMP", "TOWER", "COURT", "RIDGE", "PLAZA", "CLIFF", "GROVE", "HOTEL", "MOTEL", "MANOR", "HOUSE", "MARSH", "SHORE", "OASIS"],
     },
     6: {
@@ -73,6 +73,7 @@ while True:
     secret_word = random.choice(available_categories[category])
     
     max_attempts = 7
+    max_gained_points = 8
     game_won = False
     
     print("\n" + "=" * 40)
@@ -109,7 +110,7 @@ while True:
 
         # Check for a win
         if guess == secret_word:
-            EarnedScore = (8 - attempt)
+            EarnedScore = (max_gained_points - attempt)
             Score += EarnedScore
             print(f"🎉 Winner! You guessed the word '{secret_word}' in {attempt} tries!\n")
             print(f"🏆 You gained {EarnedScore} points!")
